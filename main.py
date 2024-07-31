@@ -10,12 +10,12 @@ def get_video_title(url):
 
 def process_links(input_file, output_file):
     try:
-        with open(input_file, 'r') as infile:
+        with open(input_file, 'r', encoding='utf-8') as infile:
             links = infile.readlines()
 
-        with open(output_file, 'w') as outfile:
+        with open(output_file, 'w', encoding='utf-8') as outfile:
             for link in links:
-                link = link.strip() 
+                link = link.strip()
                 result = get_video_title(link)
                 outfile.write(result + '\n')
 
